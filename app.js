@@ -40,9 +40,6 @@ const posts = [
 ];
 
 
-let postLength = posts.length
-
-
 
 
 
@@ -51,16 +48,16 @@ app.get('/', (req, res) => {
 });
 
 
+app.get('/bacheca', (req, res) => { // http://localhost:3000/bacheca
+    const response = {
+        results: posts,
+        count: posts.length,
+    };
+    res.json(response);
+})
 
+
+// Per ultima
 app.listen(port, () => {
     console.log('hello')
 });
-
-
-const response = {
-    posts,
-    lengt: postLength
-}
-app.get('/bacheca', (req, res) => {
-    res.send(response)
-})
